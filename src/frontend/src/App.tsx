@@ -22,11 +22,11 @@ import {
   FileText,
   FlaskConical,
   Heart,
-  Mail,
   MapPin,
   Menu,
   Microscope,
   Phone,
+  Pill,
   Shield,
   Stethoscope,
   Sun,
@@ -77,6 +77,196 @@ const services = [
     icon: Stethoscope,
     title: "Medical Investigation",
     desc: "Thorough clinical examination and diagnosis",
+  },
+];
+
+const medicineCategories = [
+  {
+    category: "Fever & Pain Relief",
+    color: "oklch(0.92 0.06 30)",
+    textColor: "oklch(0.45 0.14 30)",
+    medicines: [
+      "Paracetamol (Crocin, Dolo-650)",
+      "Ibuprofen (Brufen, Combiflam)",
+      "Diclofenac Sodium",
+      "Nimesulide",
+      "Aspirin",
+    ],
+  },
+  {
+    category: "Antibiotic & Infection",
+    color: "oklch(0.92 0.06 150)",
+    textColor: "oklch(0.38 0.12 150)",
+    medicines: [
+      "Amoxicillin",
+      "Azithromycin",
+      "Ciprofloxacin",
+      "Metronidazole",
+      "Doxycycline",
+      "Cefixime",
+    ],
+  },
+  {
+    category: "Gastric & Digestive",
+    color: "oklch(0.92 0.05 240)",
+    textColor: "oklch(0.40 0.12 240)",
+    medicines: [
+      "Pantoprazole / Omeprazole",
+      "Domperidone (Vomistop)",
+      "Ondansetron (Emeset)",
+      "ORS (Electral Powder)",
+      "Norfloxacin + Metronidazole",
+      "Syrup Lactulose",
+    ],
+  },
+  {
+    category: "Cough, Cold & Allergy",
+    color: "oklch(0.92 0.06 280)",
+    textColor: "oklch(0.42 0.12 280)",
+    medicines: [
+      "Cetirizine / Loratadine",
+      "Ambroxol + Guaifenesin Syrup",
+      "Salbutamol",
+      "Montelukast",
+      "Chlorpheniramine Maleate",
+    ],
+  },
+  {
+    category: "Diabetes & Blood Sugar",
+    color: "oklch(0.92 0.05 50)",
+    textColor: "oklch(0.45 0.13 50)",
+    medicines: [
+      "Metformin",
+      "Glimepiride",
+      "Glibenclamide",
+      "Voglibose",
+      "Insulin (as prescribed)",
+    ],
+  },
+  {
+    category: "Blood Pressure & Heart",
+    color: "oklch(0.92 0.06 10)",
+    textColor: "oklch(0.45 0.14 10)",
+    medicines: [
+      "Amlodipine",
+      "Losartan / Telmisartan",
+      "Atenolol",
+      "Enalapril",
+      "Hydrochlorothiazide",
+    ],
+  },
+  {
+    category: "Vitamins & Supplements",
+    color: "oklch(0.92 0.04 195)",
+    textColor: "oklch(0.40 0.1 210)",
+    medicines: [
+      "Vitamin D3 (Calcirol)",
+      "Vitamin B12 (Methylcobalamin)",
+      "Iron + Folic Acid",
+      "Calcium + Vitamin D",
+      "Multivitamin",
+      "Zinc Tablets",
+    ],
+  },
+  {
+    category: "Skin & Topical",
+    color: "oklch(0.92 0.04 120)",
+    textColor: "oklch(0.40 0.1 130)",
+    medicines: [
+      "Betamethasone Cream",
+      "Clotrimazole Cream",
+      "Mupirocin Ointment",
+      "Calamine Lotion",
+      "Hydrocortisone Cream",
+    ],
+  },
+];
+
+const investigationCategories = [
+  {
+    category: "Blood Tests",
+    icon: FlaskConical,
+    color: "oklch(0.92 0.06 10)",
+    textColor: "oklch(0.45 0.14 10)",
+    tests: [
+      "CBC (Complete Blood Count)",
+      "RBS / FBS / PPBS (Blood Sugar)",
+      "HbA1c (Glycated Hemoglobin)",
+      "Lipid Profile (Cholesterol)",
+      "LFT (Liver Function Test)",
+      "KFT (Kidney Function Test)",
+      "Uric Acid",
+      "ESR (Erythrocyte Sedimentation Rate)",
+    ],
+  },
+  {
+    category: "Urine & Stool Tests",
+    icon: Microscope,
+    color: "oklch(0.92 0.06 60)",
+    textColor: "oklch(0.45 0.14 60)",
+    tests: [
+      "Urine Routine & Microscopy",
+      "Urine Culture & Sensitivity",
+      "Stool Routine Examination",
+      "Occult Blood in Stool",
+      "Pregnancy Test (Urine hCG)",
+    ],
+  },
+  {
+    category: "Thyroid & Hormones",
+    icon: Activity,
+    color: "oklch(0.92 0.06 150)",
+    textColor: "oklch(0.38 0.12 150)",
+    tests: [
+      "TSH (Thyroid Stimulating Hormone)",
+      "T3 / T4",
+      "Free T3 / Free T4",
+      "Serum Insulin",
+      "Cortisol",
+    ],
+  },
+  {
+    category: "Cardiac & Imaging",
+    icon: Heart,
+    color: "oklch(0.92 0.06 280)",
+    textColor: "oklch(0.42 0.12 280)",
+    tests: [
+      "ECG (Electrocardiogram)",
+      "Chest X-Ray",
+      "Abdominal Ultrasound",
+      "Echo (Echocardiogram) – Referral",
+      "CT Scan – Referral",
+      "MRI – Referral",
+    ],
+  },
+  {
+    category: "Infection & Serology",
+    icon: Shield,
+    color: "oklch(0.92 0.05 240)",
+    textColor: "oklch(0.40 0.12 240)",
+    tests: [
+      "Malaria Antigen Test",
+      "Dengue NS1 / IgM / IgG",
+      "Typhoid (Widal Test)",
+      "HIV 1 & 2",
+      "HBsAg (Hepatitis B)",
+      "Anti-HCV (Hepatitis C)",
+      "COVID Antigen / RTPCR",
+    ],
+  },
+  {
+    category: "Special Tests",
+    icon: FileText,
+    color: "oklch(0.92 0.04 100)",
+    textColor: "oklch(0.40 0.1 110)",
+    tests: [
+      "Vitamin D (25-OH)",
+      "Vitamin B12",
+      "Serum Ferritin / Iron",
+      "CRP (C-Reactive Protein)",
+      "ANA / RA Factor",
+      "Blood Group & Rh Typing",
+    ],
   },
 ];
 
@@ -133,6 +323,12 @@ export default function App() {
     { label: "Home", id: "home", ocid: "nav.home_link" },
     { label: "About", id: "about", ocid: "nav.about_link" },
     { label: "Services", id: "services", ocid: "nav.services_link" },
+    { label: "Medicines", id: "medicines", ocid: "nav.medicines_link" },
+    {
+      label: "Investigations",
+      id: "investigations",
+      ocid: "nav.investigations_link",
+    },
     { label: "Timing", id: "timing", ocid: "nav.timing_link" },
     { label: "Contact", id: "contact", ocid: "nav.contact_link" },
   ];
@@ -151,9 +347,11 @@ export default function App() {
               onClick={() => scrollTo("home")}
               className="flex items-center gap-2.5 group"
             >
-              <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
-                <Stethoscope className="w-5 h-5 text-primary-foreground" />
-              </div>
+              <img
+                src="/assets/uploads/Screenshot_20250816-141855_2-1.png"
+                alt="Life Care Clinic Logo"
+                className="w-10 h-10 object-contain"
+              />
               <div className="leading-tight">
                 <p className="text-xs font-semibold text-muted-foreground tracking-widest uppercase">
                   LIFE CARE
@@ -165,7 +363,7 @@ export default function App() {
             </button>
 
             {/* Desktop nav */}
-            <nav className="hidden md:flex items-center gap-6">
+            <nav className="hidden lg:flex items-center gap-5">
               {navLinks.map((link) => (
                 <button
                   type="button"
@@ -191,7 +389,7 @@ export default function App() {
             <button
               type="button"
               data-ocid="nav.menu_toggle"
-              className="md:hidden p-2 rounded-lg text-foreground hover:bg-secondary transition-colors"
+              className="lg:hidden p-2 rounded-lg text-foreground hover:bg-secondary transition-colors"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
@@ -206,7 +404,7 @@ export default function App() {
 
         {/* Mobile menu */}
         {mobileOpen && (
-          <div className="md:hidden border-t border-border bg-white px-4 py-4 flex flex-col gap-3">
+          <div className="lg:hidden border-t border-border bg-white px-4 py-4 flex flex-col gap-3">
             {navLinks.map((link) => (
               <button
                 type="button"
@@ -239,7 +437,6 @@ export default function App() {
             "linear-gradient(135deg, oklch(0.25 0.08 220) 0%, oklch(0.35 0.12 205) 50%, oklch(0.45 0.14 195) 100%)",
         }}
       >
-        {/* Decorative circles */}
         <div
           className="absolute top-[-80px] right-[-80px] w-[400px] h-[400px] rounded-full opacity-10"
           style={{ background: "oklch(0.7 0.1 195)" }}
@@ -257,9 +454,16 @@ export default function App() {
                 Trusted Healthcare Provider
               </span>
             </div>
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-4">
-              Life Care Clinic
-            </h1>
+            <div className="flex items-center gap-4 mb-4">
+              <img
+                src="/assets/uploads/Screenshot_20250816-141855_2-1.png"
+                alt="Life Care Clinic"
+                className="w-20 h-20 object-contain drop-shadow-lg"
+              />
+              <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-white leading-tight">
+                Life Care Clinic
+              </h1>
+            </div>
             <p className="text-xl md:text-2xl text-white/80 font-medium mb-3">
               Dr. Syed Saqib Ali
             </p>
@@ -274,8 +478,7 @@ export default function App() {
                 className="bg-white text-primary hover:bg-white/90 font-bold text-base px-8"
                 onClick={() => scrollTo("appointment")}
               >
-                Book Appointment
-                <ChevronRight className="w-4 h-4 ml-1" />
+                Book Appointment <ChevronRight className="w-4 h-4 ml-1" />
               </Button>
               <Button
                 data-ocid="hero.secondary_button"
@@ -287,8 +490,6 @@ export default function App() {
                 Our Services
               </Button>
             </div>
-
-            {/* Quick stats */}
             <div className="flex flex-wrap gap-8 mt-12 pt-8 border-t border-white/20">
               <div>
                 <p className="text-2xl font-bold text-white">8+</p>
@@ -311,18 +512,22 @@ export default function App() {
       <section id="about" data-ocid="about.section" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Photo */}
             <div className="flex justify-center">
               <div className="relative">
                 <div
                   className="absolute inset-0 rounded-2xl translate-x-3 translate-y-3"
                   style={{ background: "oklch(0.88 0.04 210)" }}
                 />
-                <img
-                  src="/assets/generated/doctor-profile.dim_300x300.png"
-                  alt="Dr. Syed Saqib Ali"
-                  className="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-2xl shadow-card"
-                />
+                <div
+                  className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl shadow-card flex items-center justify-center"
+                  style={{ background: "oklch(0.93 0.04 210)" }}
+                >
+                  <img
+                    src="/assets/uploads/Screenshot_20250816-141855_2-1.png"
+                    alt="Life Care Clinic"
+                    className="w-40 h-40 object-contain"
+                  />
+                </div>
                 <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground rounded-xl px-4 py-2 shadow-card">
                   <p className="text-xs font-medium opacity-80">
                     General Physician
@@ -331,8 +536,6 @@ export default function App() {
                 </div>
               </div>
             </div>
-
-            {/* Bio */}
             <div>
               <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
                 About The Doctor
@@ -356,8 +559,6 @@ export default function App() {
                 and routine diagnostics. His clinic at Kooza Sironj has become a
                 trusted healthcare destination for families in the region.
               </p>
-
-              {/* Credentials */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   { icon: Award, text: "MBBS Qualified Physician" },
@@ -400,7 +601,6 @@ export default function App() {
               precision and care.
             </p>
           </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {services.map((service, i) => (
               <div
@@ -423,6 +623,140 @@ export default function App() {
         </div>
       </section>
 
+      {/* Medicine Prescription Section */}
+      <section
+        id="medicines"
+        data-ocid="medicines.section"
+        className="py-20 bg-white"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
+              Pharmacy & Treatment
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4">
+              Medicine Prescriptions
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-base">
+              Dr. Syed Saqib Ali prescribes evidence-based medicines for common
+              and chronic conditions. Below are commonly prescribed medication
+              categories at Life Care Clinic.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {medicineCategories.map((cat, i) => (
+              <div
+                key={cat.category}
+                data-ocid={`medicines.item.${i + 1}`}
+                className="rounded-xl border border-border overflow-hidden shadow-card hover:shadow-card-hover transition-shadow"
+              >
+                <div
+                  className="px-5 py-3 flex items-center gap-2"
+                  style={{ background: cat.color }}
+                >
+                  <Pill className="w-4 h-4" style={{ color: cat.textColor }} />
+                  <h3
+                    className="font-semibold text-sm"
+                    style={{ color: cat.textColor }}
+                  >
+                    {cat.category}
+                  </h3>
+                </div>
+                <ul className="px-5 py-4 space-y-2">
+                  {cat.medicines.map((med) => (
+                    <li
+                      key={med}
+                      className="flex items-start gap-2 text-sm text-foreground"
+                    >
+                      <CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
+                      <span>{med}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 p-4 rounded-xl border border-amber-200 bg-amber-50 text-center max-w-2xl mx-auto">
+            <p className="text-amber-800 text-sm font-medium">
+              ⚠️ All medicines are prescribed only after consultation. Do not
+              self-medicate. Visit the clinic for proper diagnosis and
+              prescription.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Medical Investigation Section */}
+      <section
+        id="investigations"
+        data-ocid="investigations.section"
+        className="py-20"
+        style={{ background: "oklch(0.97 0.01 210)" }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
+              Diagnostics & Pathology
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4">
+              Medical Investigations
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-base">
+              We recommend and guide patients for the necessary diagnostic
+              tests. Below are the investigations commonly advised at Life Care
+              Clinic.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {investigationCategories.map((cat, i) => (
+              <div
+                key={cat.category}
+                data-ocid={`investigations.item.${i + 1}`}
+                className="bg-white rounded-xl border border-border overflow-hidden shadow-card hover:shadow-card-hover transition-shadow"
+              >
+                <div
+                  className="px-5 py-3 flex items-center gap-2"
+                  style={{ background: cat.color }}
+                >
+                  <cat.icon
+                    className="w-4 h-4"
+                    style={{ color: cat.textColor }}
+                  />
+                  <h3
+                    className="font-semibold text-sm"
+                    style={{ color: cat.textColor }}
+                  >
+                    {cat.category}
+                  </h3>
+                </div>
+                <ul className="px-5 py-4 space-y-2">
+                  {cat.tests.map((test) => (
+                    <li
+                      key={test}
+                      className="flex items-start gap-2 text-sm text-foreground"
+                    >
+                      <Microscope className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
+                      <span>{test}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 p-4 rounded-xl border border-blue-200 bg-blue-50 text-center max-w-2xl mx-auto">
+            <p className="text-blue-800 text-sm font-medium">
+              🔬 Investigations are advised based on clinical assessment.
+              Patients are referred to certified labs for sample collection and
+              reports.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Clinic Timing Section */}
       <section
         id="timing"
@@ -441,9 +775,7 @@ export default function App() {
               We are open Monday to Saturday for your convenience.
             </p>
           </div>
-
           <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {/* Morning */}
             <div
               data-ocid="timing.morning_card"
               className="rounded-2xl p-8 border border-border shadow-card"
@@ -490,7 +822,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Afternoon/Evening */}
             <div
               data-ocid="timing.evening_card"
               className="rounded-2xl p-8 border border-border shadow-card"
@@ -537,8 +868,6 @@ export default function App() {
               </div>
             </div>
           </div>
-
-          {/* Closed note */}
           <p className="text-center text-muted-foreground text-sm mt-6">
             * Closed on Sundays and public holidays
           </p>
@@ -565,7 +894,6 @@ export default function App() {
                 Fill in the form below and we will confirm your appointment.
               </p>
             </div>
-
             <div className="bg-white rounded-2xl p-8 shadow-card">
               {formStatus === "success" ? (
                 <div
@@ -610,7 +938,6 @@ export default function App() {
                       </p>
                     </div>
                   )}
-
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div className="space-y-1.5">
                       <Label
@@ -656,7 +983,6 @@ export default function App() {
                       />
                     </div>
                   </div>
-
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div className="space-y-1.5">
                       <Label
@@ -712,7 +1038,6 @@ export default function App() {
                       </Select>
                     </div>
                   </div>
-
                   <div className="space-y-1.5">
                     <Label
                       htmlFor="reasonForVisit"
@@ -735,7 +1060,6 @@ export default function App() {
                       required
                     />
                   </div>
-
                   <Button
                     type="submit"
                     data-ocid="appointment.submit_button"
@@ -769,12 +1093,13 @@ export default function App() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid md:grid-cols-3 gap-12">
-            {/* Brand */}
             <div>
               <div className="flex items-center gap-2.5 mb-4">
-                <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center">
-                  <Stethoscope className="w-5 h-5 text-white" />
-                </div>
+                <img
+                  src="/assets/uploads/Screenshot_20250816-141855_2-1.png"
+                  alt="Life Care Clinic"
+                  className="w-10 h-10 object-contain"
+                />
                 <div className="leading-tight">
                   <p className="text-xs font-semibold text-white/60 tracking-widest uppercase">
                     LIFE CARE
@@ -789,8 +1114,6 @@ export default function App() {
                 and expertise.
               </p>
             </div>
-
-            {/* Contact Info */}
             <div>
               <h3 className="font-semibold text-white text-base mb-5">
                 Contact Us
@@ -816,16 +1139,8 @@ export default function App() {
                     Madhya Pradesh, India
                   </span>
                 </div>
-                <div className="flex items-center gap-3 text-white/70">
-                  <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-                    <Mail className="w-4 h-4 text-white" />
-                  </div>
-                  <span className="text-sm">lifecareclinic@email.com</span>
-                </div>
               </div>
             </div>
-
-            {/* Hours */}
             <div>
               <h3 className="font-semibold text-white text-base mb-5">
                 Clinic Hours
@@ -865,8 +1180,6 @@ export default function App() {
               </div>
             </div>
           </div>
-
-          {/* Bottom bar */}
           <div
             className="border-t mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3"
             style={{ borderColor: "oklch(1 0 0 / 0.1)" }}
