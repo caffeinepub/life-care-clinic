@@ -1,0 +1,109 @@
+@font-face {
+  font-family: "DM Serif Display";
+  src: url("/assets/fonts/DMSerifDisplay-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Medical teal-blue palette */
+    --background: 0.98 0.005 210;
+    --foreground: 0.18 0.03 240;
+
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.03 240;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.03 240;
+
+    /* Deep medical teal */
+    --primary: 0.42 0.13 210;
+    --primary-foreground: 1 0 0;
+
+    /* Light teal secondary */
+    --secondary: 0.92 0.04 210;
+    --secondary-foreground: 0.25 0.08 220;
+
+    --muted: 0.95 0.015 210;
+    --muted-foreground: 0.5 0.04 220;
+
+    /* Teal accent */
+    --accent: 0.62 0.12 195;
+    --accent-foreground: 1 0 0;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 1 0 0;
+
+    --border: 0.88 0.03 210;
+    --input: 0.88 0.03 210;
+    --ring: 0.42 0.13 210;
+    --radius: 0.75rem;
+
+    /* Health green */
+    --health-green: 0.55 0.15 150;
+    --health-green-light: 0.92 0.06 150;
+
+    /* Chart colors */
+    --chart-1: 0.42 0.13 210;
+    --chart-2: 0.62 0.12 195;
+    --chart-3: 0.55 0.15 150;
+    --chart-4: 0.65 0.1 230;
+    --chart-5: 0.75 0.08 200;
+
+    /* Sidebar */
+    --sidebar: 0.95 0.02 210;
+    --sidebar-foreground: 0.18 0.03 240;
+    --sidebar-primary: 0.42 0.13 210;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.88 0.04 210;
+    --sidebar-accent-foreground: 0.25 0.08 220;
+    --sidebar-border: 0.88 0.03 210;
+    --sidebar-ring: 0.42 0.13 210;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+    -webkit-font-smoothing: antialiased;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
